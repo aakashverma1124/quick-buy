@@ -15,5 +15,5 @@ console.log("hello");
 const SERVER_PORT: number = parseInt(process.env.SERVER_PORT as string, 10);
 
 app.listen(SERVER_PORT, () => {
-    console.log(`Server is listening on port ${SERVER_PORT}`);
+    console.log(`Server is listening on port ${SERVER_PORT} in ${process.env.NODE_ENV}`);
 })

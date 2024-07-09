@@ -30,4 +30,8 @@ app.listen(3000, () => {
 - run`npm start` from inside `backend`.
 - run `npm i nodemon --save-dev`
 - replace `"start": "ts-node src/app.ts"` to `"start": "nodemon src/app.ts",`.
+- add `"dev": "NODE_ENV=DEVELOPMENT nodemon src/app.ts"` for Mac
+- add `"dev": "SET NODE_ENV=DEVELOPMENT& nodemon src/app.ts"` for Windows
+- add `"prod": "NODE_ENV=PRODUCTION nodemon src/app.ts"` for Mac
+- add `"prod": "SET NODE_ENV=PRODUCTION& nodemon src/app.ts"` for Windows
 
