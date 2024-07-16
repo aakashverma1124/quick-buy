@@ -1,19 +1,20 @@
 import express from 'express';
+import * as dotenv from 'dotenv';
+import productRouter from './routes/productRoutes';
+
+dotenv.config();
 
 const app = express();
 
-import * as dotenv from 'dotenv';
+app.use('/api/v1', productRouter);
 
-dotenv.config();
-if (!process.env.SERVER_PORT) {
-    console.log(`Error to get ports`);
+if(!process.env.SERVER_PORT) {
+    console.error('server port is required')
     process.exit(1);
 }
 
-console.log("hello");
-
-const SERVER_PORT: number = parseInt(process.env.SERVER_PORT as string, 10);
+const SERVER_PORT = process.env.SERVER_PORT
 
 app.listen(SERVER_PORT, () => {
-    console.log(`Server is listening on port ${SERVER_PORT} in ${process.env.NODE_ENV}`);
+    console.log(`server started on port ${SERVER_PORT} in ${process.env.NODE_ENV} mode`)
 })
